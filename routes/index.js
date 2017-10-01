@@ -36,6 +36,7 @@ router.get('/sendtag', function (req, res) {
 
 router.post('/sendtag', function (req, res) {
     console.log(req.body.tag);
+    controller.default.prototype.processWordCloud(JSON.stringify({"text":req.body.tag,"size":1}));
     res.sendfile('./views/tagsender.html');
 });
 

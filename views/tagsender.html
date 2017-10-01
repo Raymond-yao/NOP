@@ -27,26 +27,28 @@
 	</div>
 	<div class="main-container">
 		<div class="knowledge-checkbox-container">
-			<div class="tag-item">
-				<span class="tag-name"></span>
-				<button class="submit">Send</button>
-			</div>
-			<div class="tag-item">
-				<span class="tag-name"></span>
-				<button class="submit">Send</button>
-			</div>
-			<div class="tag-item">
-				<span class="tag-name"></span>
-				<button class="submit">Send</button>
-			</div>
-			<div class="tag-item">
-				<span class="tag-name"></span>
-				<button class="submit">Send</button>
-			</div>
+			<form action="/sendtag" method="post">
+				<div class="tag-item">
+					<span class="tag-name">Pointer Definition</span>
+					<button class="submit" type="submit" name="tag" value="Pointer Definition">Send</button>
+				</div>
+				<div class="tag-item">
+					<span class="tag-name">Memory Management</span>
+					<button class="submit" type="submit" name="tag" value="Memory Management">Send</button>
+				</div>
+				<div class="tag-item">
+					<span class="tag-name">Pipeline CPU</span>
+					<button class="submit" type="submit" name="tag" value="Pipeline CPU">Send</button>
+				</div>
+				<div class="tag-item">
+					<span class="tag-name">x86 debug</span>
+					<button class="submit" type="submit" name="tag" value="x86 debug">Send</button>
+				</div>
+			</form>
 		</div>
 		<div class="comment-form-contatiner">
-			<span class="comment-box-tag">any specific tag u want?</span>
 			<form id="feed-back-form" action="/sendtag" method="post">
+				<span class="comment-box-tag">any specific tag u want?</span>
 				<input class= "input-field" type="text" name="tag"></input>
 				<button  class= "submit" id="submit-btn" type="submit" value="Submit">Send</button>
 			</form>
