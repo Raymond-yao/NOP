@@ -1,6 +1,7 @@
 body {
 	background-color: white;
-	background-image: url("/pictures/background.jpg");
+	background-image: url("/pictures/option1.jpg");
+	background-size: cover;
 }
 
 #header {
