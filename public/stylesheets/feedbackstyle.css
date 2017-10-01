@@ -1,0 +1,44 @@
+#feed-back-form{
+	margin-top: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	width: 100%;
+}
+
+.input-field{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5em;
+	margin-bottom: 0.3em;
+	display: block;
+}
+
+.submit{
+	
+	background-color: transparent;
+	background-image: none;
+
+	width:80px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	cursor: pointer;
+
+	text-align: center;
+	vertical-align: middle;
+	border: 0.5px;
+	border-style: solid;
+	border-color:purple;
+	color:purple;
+}
+
+.submit :hover{
+	
+	background-color: purple;
+	background-image: none;
+	color:white;
+	width:100px;
+	
+}
