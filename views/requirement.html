@@ -1,0 +1,59 @@
+<head>
+    <title>feedback | coursefeedback</title>
+    <link rel="import" href="/library.html">
+</head>
+
+<body>
+    <!-- datatable -->
+    <table id="entities_table" class="display" width=100%>
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Date</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <div></div>
+    <script>
+        var sampleData = [
+            { Name: "CS213", Date: "2017/09/21", Details: "papapapapa" },
+            { Name: "CS213", Date: "2017/09/22", Details: "jsjsjsjsjsjs" }];
+        var entitiesTable = $('#entities_table').DataTable({
+            data: sampleData,
+            processing: true,
+            lengthChange: false,
+            language: {
+                "info": "Showing page _PAGE_ of _PAGES_ <br>"
+            },
+            scrollX: true,
+            scrollCollapse: true,       //remove? - forces a certain height when scrolling is enabled
+            paging: true,
+            select: {
+                style: "single",
+                info: false
+            },
+            stateSave: false,
+            columns: [
+                { data: "Name" },
+                { data: "Date" },
+                { data: "Details" }
+            ],
+            order: [[1, 'asc']],
+            columnDefs: [
+                {
+                    "targets": [0],
+                    "searchable": true
+                }, {
+                    "targets": [1],
+                    "searchable": true
+                }, {
+                    "targets": [2],
+                    "searchable": false
+                }
+            ],
+            dom: 'Bfrtip',
+        });
+    </script>
+</body>

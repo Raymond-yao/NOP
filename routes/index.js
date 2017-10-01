@@ -8,11 +8,15 @@ var controller = require('../controller/DatasetController');
 //   res.render('index', { title: 'Team: NOP' });
 // });
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     res.sendfile('./views/teacherAdd.html');
 });
 
-router.get('/library.html', function(req, res) {
+router.get('/heyheyhey', function (req, res) {
+    res.sendfile('./views/requirement.html');
+});
+
+router.get('/library.html', function (req, res) {
     res.sendfile('./views/library.html');
 });
 
