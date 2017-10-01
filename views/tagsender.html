@@ -4,6 +4,7 @@
 	<title>feedback | coursefeedback</title>
 	<link rel="import" href="/library.html">
 	<link rel="stylesheet" href="stylesheets/feedbackstyle.css">
+	<link rel="stylesheet" href="stylesheets/sendtag.css">
 </head>
 <body>
 	<div>
@@ -26,16 +27,28 @@
 	</div>
 	<div class="main-container">
 		<div class="knowledge-checkbox-container">
-			<div class="checkbox-title">
-				
+			<div class="tag-item">
+				<span class="tag-name"></span>
+				<button class="submit">Send</button>
 			</div>
-			<script type="text/javascript" src="assets/feedback.js"></script>
+			<div class="tag-item">
+				<span class="tag-name"></span>
+				<button class="submit">Send</button>
+			</div>
+			<div class="tag-item">
+				<span class="tag-name"></span>
+				<button class="submit">Send</button>
+			</div>
+			<div class="tag-item">
+				<span class="tag-name"></span>
+				<button class="submit">Send</button>
+			</div>
 		</div>
 		<div class="comment-form-contatiner">
 			<form id="feed-back-form">
-				<div class="comment-box-tag">any comment on Profs / lecture contents etc.</div>
-				<textarea class= "input-field" id="big-comment-box" type="" name=""></textarea>
-				<button  class= "submit"><a href="/thankyou" style="text-decoration: none; color: purple;" class="submit-link">Submit</a></button>
+				<div class="comment-box-tag">any specific tag u want?</div>
+				<input class= "input-field" type="" name=""></input>
+				<button  class= "submit"><a href="/thankyou" style="text-decoration: none; color: purple;" class="submit-link">Send</a></button>
 			</form>
 		</div>
 		<div class="footer">
@@ -44,13 +57,9 @@
 		
 	</div>
 	<script type="text/javascript"> 
-		
 		$(function(){
-			
+			$(".submit").click(function(){});
 
-			$("#button").click(function(){
-				alert("hello world!");
-			})
 
 		});
 	</script>
