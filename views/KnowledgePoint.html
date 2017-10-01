@@ -1,0 +1,81 @@
+<head>
+    <title>Course Knowledge Point Edit</title>
+    <link rel="import" href="/library.html">
+</head>
+
+<body>
+    <!-- datatable -->
+    <table id="entities_table" class="display" width=100%>
+        <thead>
+            <tr>
+                <th>Class Name</th>
+                <th>Date</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+    </table>
+    <br>
+    <div></div>
+    <script>
+        var entitiesTable = $('#entities_table').DataTable({
+            ajax: {
+                "url": "/getJSON",
+                "dataSrc": null
+            },
+            processing: true,
+            lengthChange: false,
+            language: {
+                "info": "Showing page _PAGE_ of _PAGES_ <br>"
+            },
+            scrollX: true,
+            scrollCollapse: true,       //remove? - forces a certain height when scrolling is enabled
+            paging: true,
+            select: {
+                style: "single",
+                info: false
+            },
+            stateSave: false,
+            columns: [
+                { data: "classID" },
+                { data: "Date" },
+                { data: "knowledgePoint" }
+            ],
+            order: [[1, 'asc']],
+            columnDefs: [
+                {
+                    "targets": [0],
+                    "searchable": true
+                }, {
+                    "targets": [1],
+                    "searchable": true
+                }, {
+                    "targets": [2],
+                    "searchable": false
+                }
+            ],
+            dom: 'Bfrtip',
+        });
+
+        entitiesTable.on('xhr', function () {
+            var json = entitiesTable.ajax.json();
+            console.log(json);
+        });
+    </script>
+    <form action="/requirement" method="post">
+        <label>Class name</label>
+        <input type="text" name="class" maxLength="200" autoFocus className="form-control"></input>
+        <label>date</label>
+        <input type="date" name="date" maxLength="200" autoFocus className="form-control"></input>
+        <label>Detail</label>
+        <input type="text" name="detail" maxLength="200" autoFocus className="form-control"></input>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <button onclick="myFunction()"> Generate QR Code </button>
+    <script>
+                     function myFunction() {
+                         window.open("https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=This%20is%20not%20implemented%20due%20to%20wifi%20issue",
+                             "_blank", "resizable=yes,top=500,left=500,width=400,height=400");
+                     }
+    </script>
+</body>

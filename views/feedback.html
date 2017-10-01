@@ -2,49 +2,64 @@
 <html lang="en">
 <head>
 	<title>feedback | coursefeedback</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link rel="import" href="/library.html">
+	<link rel="stylesheet" href="stylesheets/feedbackstyle.css">
 </head>
 <body>
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-light" id="header">
+			<a style="color: purple;font-size: 30px;" class="navbar-brand" href="#">Course Master</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a style="color: purple;font-size: 20px;" class="nav-link" href="/">WordCloud <span class="sr-only">(current)</span></a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</nav> 
+	</div>
 	<div class="main-container">
-		<div class="header">
-			<nav class="navbar navbar-light bg-light">
-				<a class="navbar-brand" href="#">
-					<img src="IMG_0614.JPG" width="30" height="30" class="d-inline-block align-top" alt="">
-					Course Evaluation
-				</a>
-			</nav> 
+		<div class="knowledge-checkbox-container">
+			<div class="checkbox-title" style="border-bottom-style: solid;border-color: purple;border-width: 0.8px;">
+				<div class="check-item"><span>Introduction to Hardware: Lecture 2</span></div>
+			</div>
+			<div class="check-item">
+				<span style="font-size: 20px;color: purple">
+					Knowledge points
+				</span>
+				<span style="float: right;margin-right: 25px;font-size: 20px;color: purple">
+					Got it?
+				</span>
+			</div>
+			<script type="text/javascript" src="assets/feedback.js"></script>
 		</div>
-		<div class="knowledge-checkbox-container"></div>
 		<div class="comment-form-contatiner">
 			<form id="feed-back-form">
-				<input type="" name="">
-				<input type="" name="">
-				<input type="" name="">
-				<input type="" name="">
-				<button id="submit-button">Submit</button>
+				<div class="comment-box-tag">any comment on Profs / lecture contents etc.</div>
+				<textarea class= "input-field" id="big-comment-box" type="" name=""></textarea>
+				<button  class= "submit"><a href="/thankyou" style="text-decoration: none; color: purple;" class="submit-link">Submit</a></button>
 			</form>
 		</div>
-		<div class="footer">
-			
-		</div>
-		
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
-	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
-	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<div class="footer">
 
-	<script type="text/javascript"> $(function(){
+	</div>
+	<script type="text/javascript"> 
 
-		$("#button").click(function(){
-			alert("hello world!");
-		})
+		$(function(){
 
-	});
+
+			$("#button").click(function(){
+				alert("hello world!");
+			})
+
+		});
 	</script>
 </body>
 </html>
