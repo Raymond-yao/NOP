@@ -7,7 +7,7 @@ var router = express.Router();
 // });
 
 router.get('/', function(req, res) {
-    res.sendfile('./views/feedback.html');
+    res.sendfile('./views/teacherAdd.html');
 });
 
 router.get('/library.html', function(req, res) {
