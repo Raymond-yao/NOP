@@ -16,20 +16,20 @@ export interface Form {
 }
 
 export interface Word {
-    text : string;
-    size? : number;
+    text: string;
+    size?: number;
 }
 
 export default class DatasetController {
 
     // private dataset : Dataset = {};
-    private values : CourseRecord[] = [];
+    private values: CourseRecord[] = [];
 
     constructor() {
         console.log('DatasetController::init()');
     }
 
-    public getCourseDatasets() : any {
+    public getCourseDatasets(): any {
         // let courses : string;
         // let links = fs.readdirSync("./data/");
         // for (let link of links) {
@@ -39,20 +39,20 @@ export default class DatasetController {
         return JSON.parse(fs.readFileSync("./data/course.json", "utf-8"));
     }
 
-    public getWordCloudDatasets() : any {
+    public getWordCloudDatasets(): any {
 
         // try {
-            return JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        return JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
         // } catch (err) {
         //     return fs.readFileSync("./data/wordCloud.json", "utf-8");
         // }
     }
 
-    public processWordCloud(word : string) {
+    public processWordCloud(word: string) {
         let that = this;
-        let wordValue : Word = JSON.parse(word);
-        let wordCloud : Word[] = JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
-        let flag : boolean = false;
+        let wordValue: Word = JSON.parse(word);
+        let wordCloud: Word[] = JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        let flag: boolean = false;
         let i = 0;
         for (; i < wordCloud.length; i++) {
             if (wordCloud[i].text == wordValue.text) {
@@ -73,12 +73,12 @@ export default class DatasetController {
     }
 
 
-    public processForm(form : string) {
+    public processForm(form: string) {
         let that = this;
-        let formValues : Form = JSON.parse(form);
+        let formValues: Form = JSON.parse(form);
         for (let i = 0; i < formValues.knowledgePoints.length; i++) {
             console.log(formValues.classID, formValues.Date, formValues.knowledgePoints[i]);
-            let tmp : CourseRecord = new CourseRecord();
+            let tmp: CourseRecord = new CourseRecord();
             tmp.classID = formValues.classID;
             tmp.Date = formValues.Date;
             tmp.knowledgePoint = formValues.knowledgePoints[i];
@@ -87,13 +87,13 @@ export default class DatasetController {
         that.save(that.values);
     }
 
-    public save(values : CourseRecord[]) {
+    public save(values: CourseRecord[]) {
         let that = this;
 
         let filePath = "./data/" + "course.json";
         try {
             fs.statSync("./data");
-        } catch(e) {
+        } catch (e) {
             fs.mkdirSync("./data");
         }
         console.log("value is : " + JSON.stringify(values));

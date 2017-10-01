@@ -36,7 +36,8 @@ router.get('/sendtag', function (req, res) {
 
 router.post('/sendtag', function (req, res) {
     console.log(req.body.tag);
-    res.sendfile('./views/tagsender.html');});
+    res.sendfile('./views/tagsender.html');
+});
 
 
 router.get('/library.html', function (req, res) {
@@ -47,6 +48,9 @@ router.get('/getJSON', function (req, res) {
     res.json(controller.default.prototype.getCourseDatasets());
 })
 
+router.get('/getwork', function (req, res) {
+    res.json(controller.default.prototype.getWordCloudDatasets());
+})
 
 
 module.exports = router;
