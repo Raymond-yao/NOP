@@ -45,10 +45,10 @@ var DatasetController = /** @class */ (function () {
             }
         }
         if (flag) {
-            wordCloud[i].size++;
+            wordCloud[i].size+=30;
         }
         else {
-            wordValue.size = 1;
+            wordValue.size = 30;
             wordCloud.push(wordValue);
         }
         console.log(JSON.stringify(wordCloud));
