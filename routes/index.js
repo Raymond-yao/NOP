@@ -12,9 +12,24 @@ router.get('/', function (req, res) {
     res.sendfile('./views/teacherAdd.html');
 });
 
+
 router.get('/heyheyhey', function (req, res) {
     res.sendfile('./views/requirement.html');
 });
+
+
+router.get('/feedback', function (req, res) {
+    res.sendfile('./views/feedback.html');
+});
+
+router.get('/thankyou', function (req, res) {
+    res.sendfile('./views/thankyou.html');
+})
+
+router.get('/sendtag', function (req, res) {
+    res.sendfile('./views/tagsender.html');
+})
+
 
 router.get('/library.html', function (req, res) {
     res.sendfile('./views/library.html');
