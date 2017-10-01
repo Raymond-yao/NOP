@@ -1,5 +1,5 @@
 $(function(){
-
+	
 	for (var i = 0 ; i<3;i++){
 		var newDiv = document.createElement("div");
 		newDiv.classList.add("check-item");
