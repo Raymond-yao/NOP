@@ -13,76 +13,75 @@
         <nav class="navbar navbar-expand-lg navbar-light" id="header">
             <a href="$WebPath.getINDEX()" class="navbar-brand">Coourse Master</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-               <li class="nav-item active">
-                  <a style="color: purple;font-size: 20px;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-            </ul>          
-  </div>
-</nav> 
-</div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color: purple;font-size: 20px;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-<div id="jesus" style="margin-left: auto; margin-right: auto;"></div>
-<div class="footer"></div>
-<br>
+    <div id="jesus" style="margin-left: auto; margin-right: auto;"></div>
+    <br>
 
-<script>
-    var color = d3.scale.linear().domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100]).range(["#001f3f", "#0074D9", "#39CCCC", "#3D9970", "#63f126",
-        "#2ECC40", "#01FF70", "#272bef", "#a126d6", "#2680d6", "#333", "#222"]);
-    var frequency_list;
-    $(document).ready(function () {
-        $.ajax({
-            type: "get", url: "/getwork", dataType: "json", success: function (response) {
-                frequency_list = response; initgraph();
-            }, error: function (response) { console.log(response); }
+    <script>
+        var color = d3.scale.linear().domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100]).range(["#001f3f", "#0074D9", "#39CCCC", "#3D9970", "#63f126",
+            "#2ECC40", "#01FF70", "#272bef", "#a126d6", "#2680d6", "#333", "#222"]);
+        var frequency_list;
+        $(document).ready(function () {
+            $.ajax({
+                type: "get", url: "/getwork", dataType: "json", success: function (response) {
+                    frequency_list = response; initgraph();
+                }, error: function (response) { console.log(response); }
+            });
+
+            setInterval(reinitgraph, 3000);
         });
 
-        setInterval(reinitgraph, 3000);
-    });
-
-    function findMax() {
-        var max = 0;
-        for (let a of frequency_list) {
-            if (a.size > max)
-                max = a.size;
+        function findMax() {
+            var max = 0;
+            for (let a of frequency_list) {
+                if (a.size > max)
+                    max = a.size;
+            }
+            return max;
         }
-        return max;
-    }
 
-    function reinitgraph() {
-        d3.select("svg").remove();
-        $.ajax({
-            type: "get",
-            url: "/getwork",
-            dataType: "json",
-            success: function (response) {
-                frequency_list = response;
-                initgraph();
-            }, error: function (response) { console.log(response); }
-        });
+        function reinitgraph() {
+            d3.select("svg").remove();
+            $.ajax({
+                type: "get",
+                url: "/getwork",
+                dataType: "json",
+                success: function (response) {
+                    frequency_list = response;
+                    initgraph();
+                }, error: function (response) { console.log(response); }
+            });
 
-    }
+        }
 
-    function initgraph() {
-        var max = findMax();
-        d3.layout.cloud().size([800, 300])
-        .words(frequency_list)
-        .rotate(0)
-        .fontSize(function (d) { return d.size; })
-        .on("end", draw)
-        .start(max);
-    }
+        function initgraph() {
+            var max = findMax();
+            d3.layout.cloud().size([800, 300])
+                .words(frequency_list)
+                .rotate(0)
+                .fontSize(function (d) { return d.size; })
+                .on("end", draw)
+                .start(max);
+        }
 
-    function draw(words) {
-        d3.select("#jesus").append("svg")
-        .attr("width", 1050)
-        .attr("height", 550)
-        .attr("class", "wordcloud")
-        .append("g")
+        function draw(words) {
+            d3.select("#jesus").append("svg")
+                .attr("width", 1050)
+                .attr("height", 550)
+                .attr("class", "wordcloud")
+                .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
                 .attr("transform", "translate(320,200)")
@@ -95,7 +94,7 @@
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
                 })
                 .text(function (d) { return d.text; });
-            }
-        </script>
-    </body>
-    <html>
+        }
+    </script>
+</body>
+<html>
