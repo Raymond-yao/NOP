@@ -36,22 +36,23 @@ export default class DatasetController {
         //     let id = link.split(".")[0];
         //      courses = JSON.parse(fs.readFileSync("./data/" + link, 'utf-8'));
         // }
-        return JSON.parse(fs.readFileSync("./data/course.json", "utf-8"));
+        return JSON.parse(Buffer.concat(fs.readFileSync("./data/course.json", "utf-8")).toString("utf-8"));
     }
 
     public getWordCloudDatasets(): any {
 
         // try {
-        return JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        return JSON.parse(Buffer.concat(fs.readFileSync("./data/wordCloud.json", "utf-8")).toString("utf-8"));
         // } catch (err) {
         //     return fs.readFileSync("./data/wordCloud.json", "utf-8");
         // }
     }
 
     public processWordCloud(word: string) {
+
         let that = this;
         let wordValue: Word = JSON.parse(word);
-        let wordCloud: Word[] = JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        let wordCloud: Word[] = JSON.parse(Buffer.concat(fs.readFileSync("./data/wordCloud.json", "utf-8")).toString("utf-8"));
         let flag: boolean = false;
         let i = 0;
         for (; i < wordCloud.length; i++) {
@@ -60,10 +61,14 @@ export default class DatasetController {
                 break;
             }
         }
+        console.log("TRACK");
         if (flag) {
-            wordCloud[i].size++;
+            console.log(wordCloud[i].text + "HA!");
+            console.log(wordCloud[i].size + "FA!");
+            wordCloud[i].size = wordCloud[i].size + 50;
+            console.log(wordCloud[i].size + "now!");
         } else {
-            wordValue.size = 1;
+            wordValue.size = 50;
             wordCloud.push(wordValue);
         }
         console.log(JSON.stringify(wordCloud));
