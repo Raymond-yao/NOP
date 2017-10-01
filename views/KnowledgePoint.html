@@ -1,5 +1,5 @@
 <head>
-    <title>feedback | coursefeedback</title>
+    <title>Course Knowledge Point Edit</title>
     <link rel="import" href="/library.html">
 </head>
 
@@ -17,9 +17,6 @@
     <br>
     <div></div>
     <script>
-        var sampleData = [
-            { Name: "CS213", Date: "2017/09/21", Details: "papapapapa" },
-            { Name: "CS213", Date: "2017/09/22", Details: "jsjsjsjsjsjs" }];
         var entitiesTable = $('#entities_table').DataTable({
             ajax: {
                 "url": "/getJSON",
@@ -65,7 +62,7 @@
         });
     </script>
     <form action="/requirement" method="post">
-        <label>aaClass name</label>
+        <label>Class name</label>
         <input type="text" name="class" maxLength="200" autoFocus className="form-control"></input>
         <label>date</label>
         <input type="date" name="date" maxLength="200" autoFocus className="form-control"></input>

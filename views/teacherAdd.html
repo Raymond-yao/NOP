@@ -7,33 +7,34 @@
     <link rel="stylesheet" href="stylesheets/feedbackstyle.css">
     <link rel="stylesheet" href="stylesheets/sendtag.css">
 </head>
+
 <body style="background-image:none;">
-	<div>
-		<nav class="navbar navbar-expand-lg navbar-light" id="header">
-			<a style="color: purple;font-size: 30px;" class="navbar-brand" href="#">Course Master</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light" id="header">
+            <a style="color: purple;font-size: 30px;" class="navbar-brand" href="#">Course Master</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a style="color: purple;font-size: 20px;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<button class= "login" >Login</button>
-				</ul>
-				
-			</div>
-		</nav> 
-	</div>
-    <!-- datatable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a style="color: purple;font-size: 20px;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <button class="login">Login</button>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
     <div id="jesus" style="margin-left: auto; margin-right: auto;"></div>
     <br>
 
     <script>
-        var color = d3.scale.linear().domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100]).range(["#b53529", "#ccc", "#393ece", "#ebf226", "#63f126",
-            "#c728ef", "#27e1ef", "#272bef", "#a126d6", "#2680d6", "#333", "#222"]);
-
+        var color = d3.scale.linear().domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100]).range(["#001f3f", "#0074D9", "#39CCCC", "#3D9970", "#63f126",
+            "#2ECC40", "#01FF70", "#272bef", "#a126d6", "#2680d6", "#333", "#222"]);
         var frequency_list;
         $(document).ready(function () {
             $.ajax({

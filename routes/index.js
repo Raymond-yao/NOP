@@ -14,12 +14,13 @@ router.get('/', function (req, res) {
 
 
 router.get('/requirement', function (req, res) {
-    res.sendfile('./views/requirement.html');
+    res.sendfile('./views/KnowledgePoint.html');
 });
 
 router.post('/requirement', function (req, res) {
-    console.log(req.query);
-    res.sendfile('./views/requirement.html');
+    console.log(req.body);
+    //todo add new data in it
+    res.sendfile('./views/KnowledgePoint.html');
 });
 
 router.get('/feedback', function (req, res) {
@@ -36,7 +37,7 @@ router.get('/sendtag', function (req, res) {
 
 router.post('/sendtag', function (req, res) {
     console.log(req.body.tag);
-    controller.default.prototype.processWordCloud(JSON.stringify({"text":req.body.tag,"size":10}));
+    controller.default.prototype.processWordCloud(JSON.stringify({ "text": req.body.tag, "size": 10 }));
     res.sendfile('./views/tagsender.html');
 });
 
