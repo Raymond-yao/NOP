@@ -34,6 +34,10 @@ router.get('/sendtag', function (req, res) {
     res.sendfile('./views/tagsender.html');
 })
 
+router.post('/sendtag', function (req, res) {
+    console.log(req.body.tag);
+    res.sendfile('./views/tagsender.html');});
+
 
 router.get('/library.html', function (req, res) {
     res.sendfile('./views/library.html');

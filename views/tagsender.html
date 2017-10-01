@@ -45,10 +45,10 @@
 			</div>
 		</div>
 		<div class="comment-form-contatiner">
-			<form id="feed-back-form">
-				<div class="comment-box-tag">any specific tag u want?</div>
-				<input class= "input-field" type="" name=""></input>
-				<button  class= "submit"><a href="/thankyou" style="text-decoration: none; color: purple;" class="submit-link">Send</a></button>
+			<span class="comment-box-tag">any specific tag u want?</span>
+			<form id="feed-back-form" action="/sendtag" method="post">
+				<input class= "input-field" type="text" name="tag"></input>
+				<button  class= "submit" id="submit-btn" type="submit" value="Submit">Send</button>
 			</form>
 		</div>
 		<div class="footer">
@@ -58,9 +58,8 @@
 	</div>
 	<script type="text/javascript"> 
 		$(function(){
-			$(".submit").click(function(){});
 
-
+			
 		});
 	</script>
 </body>
