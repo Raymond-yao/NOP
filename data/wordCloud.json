@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":93},{"motion":"study","size":1},{"text":"ggez","size":4},{"text":"Pointer Definition","size":1},{"text":"Memory Management","size":1},{"text":"Pipeline CPU","size":1},{"text":"x86 debug","size":1},{"text":"","size":1}]
+=======
+[{"text":"study","size":30},{"text":"motion","size":15},{"text":"forces","size":10},{"motion":"study","size":1},{"text":"ggez","size":24},{"text":"GG","size":15},{"text":"Pointer Definition","size":77},{"text":"Memory Management","size":43}]
+>>>>>>> 280b84882950e1461cb3c74cba88eedb189f933f
