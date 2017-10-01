@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>feedback | coursefeedback</title>
 	<link rel="import" href="/library.html">
 	<link rel="stylesheet" href="stylesheets/feedbackstyle.css">
 	<link rel="stylesheet" href="stylesheets/sendtag.css">
 </head>
+
 <body>
 	<div>
 		<nav class="navbar navbar-expand-lg navbar-light" id="header">
-			<a style="color: purple;font-size: 30px;" class="navbar-brand" href="#">Course Master</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<h3 class="navbar-header"><a href="#">Course Master</a></h3>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			 aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="navbar-collapse collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a style="color: purple;font-size: 20px;" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<li id="" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Version</a>
+						<ul class="dropdown-menu">
+							<li> <a href="">In Class</a></li>
+							<li> <a href="">After Class</a></li>
+						</ul>
 					</li>
-					<button class= "login" >Login</button>
+					<li id="" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Teacher Version</a>
+						<ul class="dropdown-menu">
+							<li> <a href="">In Class</a></li>
+							<li> <a href="">After Class</a></li>
+						</ul>
+					</li>
 				</ul>
-				
+
 			</div>
-		</nav> 
+		</nav>
 	</div>
 	<div class="main-container">
 		<div class="knowledge-checkbox-container">
@@ -49,20 +62,21 @@
 		<div class="comment-form-contatiner">
 			<form id="feed-back-form" action="/sendtag" method="post">
 				<span class="comment-box-tag">any specific tag u want?</span>
-				<input class= "input-field" type="text" name="tag"></input>
-				<button  class= "submit" id="submit-btn" type="submit" value="Submit">Send</button>
+				<input class="input-field" type="text" name="tag"></input>
+				<button class="submit" id="submit-btn" type="submit" value="Submit">Send</button>
 			</form>
 		</div>
 		<div class="footer">
-			
-		</div>
-		
-	</div>
-	<script type="text/javascript"> 
-		$(function(){
 
-			
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$(function () {
+
+
 		});
 	</script>
 </body>
+
 </html>

@@ -194,3 +194,8 @@ input:checked + .slider:before {
 .submit-link :hover{
 	color:white;
 }
+
+a {
+  color: purple;
+  font-size: 20px;
+}
