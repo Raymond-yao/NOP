@@ -5,13 +5,13 @@ import fs = require("fs");
 
 export class CourseRecord {
     classID: string;
-    Date: number;
+    Date: Date;
     knowledgePoint: string;
 }
 
 export interface Form {
     classID: string;
-    Date: number;
+    Date: Date;
     knowledgePoints: string[];
 }
 

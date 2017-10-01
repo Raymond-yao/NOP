@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var controller = require('../controller/DatasetController');
+
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -13,6 +15,7 @@ router.get('/', function(req, res) {
 router.get('/library.html', function(req, res) {
     res.sendfile('./views/library.html');
 });
+
 
 
 module.exports = router;
