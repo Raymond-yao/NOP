@@ -1,9 +1,13 @@
+#header {
+	background-color: purple;
+}
+
 #feed-back-form{
 	margin-top: 3em;
 	margin-left: auto;
 	margin-right: auto;
 	height: 100%;
-	width: 100%;
+	width: 80%;
 }
 
 .input-field{
@@ -12,6 +16,21 @@
 	margin-top: 0.5em;
 	margin-bottom: 0.3em;
 	display: block;
+	width: 80%;
+	height: 30%;
+}
+
+#big-comment-box{
+	height: 150px;
+}
+
+.comment-box-tag{
+	color:purple;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.2em;
+	text-align: left;
 }
 
 .submit{
@@ -32,13 +51,13 @@
 	border-style: solid;
 	border-color:purple;
 	color:purple;
+	-webkit-transition:0.5s;
 }
 
-.submit :hover{
-	
+.submit:hover{
 	background-color: purple;
 	background-image: none;
 	color:white;
-	width:100px;
+	width:160px;
 	
 }
