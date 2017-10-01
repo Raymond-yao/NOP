@@ -17,7 +17,7 @@ router.get('/requirement', function (req, res) {
     res.sendfile('./views/requirement.html');
 });
 
-router.post('/test', function (req, res) {
+router.post('/requirement', function (req, res) {
     console.log(req.query);
     res.sendfile('./views/requirement.html');
 });
