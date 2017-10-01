@@ -16,15 +16,45 @@ var DatasetController = /** @class */ (function () {
         this.values = [];
         console.log('DatasetController::init()');
     }
-    DatasetController.prototype.getDatasets = function () {
-        var courses;
-        var links = fs.readdirSync("./data/");
-        for (var _i = 0, links_1 = links; _i < links_1.length; _i++) {
-            var link = links_1[_i];
-            var id = link.split(".")[0];
-            courses = JSON.parse(fs.readFileSync("./data/" + link, 'utf-8'));
+    DatasetController.prototype.getCourseDatasets = function () {
+        // let courses : string;
+        // let links = fs.readdirSync("./data/");
+        // for (let link of links) {
+        //     let id = link.split(".")[0];
+        //      courses = JSON.parse(fs.readFileSync("./data/" + link, 'utf-8'));
+        // }
+        return JSON.parse(fs.readFileSync("./data/course.json", "utf-8"));
+    };
+    DatasetController.prototype.getWordCloudDatasets = function () {
+        // try {
+        return JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        // } catch (err) {
+        //     return fs.readFileSync("./data/wordCloud.json", "utf-8");
+        // }
+    };
+    DatasetController.prototype.processWordCloud = function (word) {
+        var that = this;
+        var wordValue = JSON.parse(word);
+        var wordCloud = JSON.parse(fs.readFileSync("./data/wordCloud.json", "utf-8"));
+        var flag = false;
+        var i = 0;
+        for (; i < wordCloud.length; i++) {
+            if (wordCloud[i].text == wordValue.text) {
+                flag = true;
+                break;
+            }
         }
-        return courses;
+        if (flag) {
+            wordCloud[i].size++;
+        }
+        else {
+            wordValue.size = 1;
+            wordCloud.push(wordValue);
+        }
+        console.log(JSON.stringify(wordCloud));
+        fs.writeFile("./data/wordCloud.json", JSON.stringify(wordCloud), function (err) {
+            console.info('DatasetController::processWordCloud(..) - success');
+        });
     };
     DatasetController.prototype.processForm = function (form) {
         var that = this;
