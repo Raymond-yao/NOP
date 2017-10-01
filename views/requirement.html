@@ -22,7 +22,7 @@
             { Name: "CS213", Date: "2017/09/22", Details: "jsjsjsjsjsjs" }];
         var entitiesTable = $('#entities_table').DataTable({
             ajax: {
-                "url": "",
+                "url": "/getJSON",
                 "dataSrc": null
             },
             processing: true,
@@ -58,15 +58,15 @@
             ],
             dom: 'Bfrtip',
         });
+
+        entitiesTable.on('xhr', function () {
+            var json = entitiesTable.ajax.json();
+            console.log(json);
+        });
     </script>
     <div id="root"></div>
 </body>
 <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-<script type="text/babel">
-    ReactDOM.render(
-    <h1>Hello, world!
-    </h1>, document.getElementById('root') );
-
-</script>
+<script type="text/babel" src="react/accInput.js"></script>
