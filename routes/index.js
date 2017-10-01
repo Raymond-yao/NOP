@@ -13,10 +13,14 @@ router.get('/', function (req, res) {
 });
 
 
-router.get('/heyheyhey', function (req, res) {
+router.get('/requirement', function (req, res) {
     res.sendfile('./views/requirement.html');
 });
 
+router.post('/test', function (req, res) {
+    console.log(req.query);
+    res.sendfile('./views/requirement.html');
+});
 
 router.get('/feedback', function (req, res) {
     res.sendfile('./views/feedback.html');
