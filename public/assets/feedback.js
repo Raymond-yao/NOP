@@ -3,12 +3,12 @@ $(function () {
 	$.ajax({
 		type: "get", url: "/getJSON", dataType: "json", success: function (response) {
 
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < response.length; i++) {
 				var newDiv = document.createElement("div");
 				newDiv.classList.add("check-item");
 				$(newDiv).attr("id", i.toString());
 				var newSpan = document.createElement("span");
-				var textnode = document.createTextNode("haha");
+				var textnode = document.createTextNode((i+1) + '. ' + response[i].knowledgePoint);
 				newSpan.classList.add("knowledge-point");
 				newSpan.appendChild(textnode);
 				newDiv.appendChild(newSpan);
@@ -17,8 +17,6 @@ $(function () {
 			}
 		}, error: function (response) { console.log(response); }
 	});
-
-
-
 });
+
 
