@@ -19,11 +19,21 @@ describe('my test', function () {
     });
     it("Retrieve data from course.json", function () {
         var datasetController = new DatasetController_1.default();
-        var ans = datasetController.getDatasets();
+        var ans = datasetController.getCourseDatasets();
         var obj = [{ "classID": "213", "Date": 123, "knowledgePoint": "static variable" },
             { "classID": "213", "Date": 123, "knowledgePoint": "scalar and arrays" },
             { "classID": "213", "Date": 123, "knowledgePoint": "memory allocation" },
             { "classID": "213", "Date": 123, "knowledgePoint": "pointer" }];
+        chai_1.expect(JSON.stringify(ans)).to.equal(JSON.stringify(obj));
+    });
+    it.only("Retrieve data from wordCloud.json", function () {
+        var datasetController = new DatasetController_1.default();
+        var text = { "text": "forces", "size": 1 };
+        datasetController.processWordCloud(JSON.stringify(text));
+        var obj = [
+            { "text": "study", "size": 41 }, { "text": "motion", "size": 39 }, { "text": "forces", "size": 10 }
+        ];
+        var ans = datasetController.getWordCloudDatasets();
         chai_1.expect(JSON.stringify(ans)).to.equal(JSON.stringify(obj));
     });
 });

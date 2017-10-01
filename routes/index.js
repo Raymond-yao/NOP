@@ -33,11 +33,10 @@ router.get('/sendtag', function (req, res) {
 
 router.get('/library.html', function (req, res) {
     res.sendfile('./views/library.html');
-    // res.send(controller.default.prototype.getDatasets());
 });
 
 router.get('/getJSON', function (req, res) {
-    res.json(controller.default.prototype.getDatasets());
+    res.json(controller.default.prototype.getCourseDatasets());
 })
 
 

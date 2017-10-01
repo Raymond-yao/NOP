@@ -25,7 +25,7 @@ describe('my test', () => {
 
     it("Retrieve data from course.json", function () {
         let datasetController = new DatasetController();
-        let ans : string = datasetController.getDatasets();
+        let ans : string = datasetController.getCourseDatasets();
         let obj = [{"classID":"213","Date": 123,"knowledgePoint":"static variable"},
             {"classID":"213","Date": 123,"knowledgePoint":"scalar and arrays"},
             {"classID":"213","Date": 123,"knowledgePoint":"memory allocation"},
@@ -33,4 +33,14 @@ describe('my test', () => {
         expect(JSON.stringify(ans)).to.equal(JSON.stringify(obj));
     });
 
+    it.only("Retrieve data from wordCloud.json", function () {
+        let datasetController = new DatasetController();
+        let text = {"text" : "forces", "size" : 1};
+        datasetController.processWordCloud(JSON.stringify(text));
+        let obj = [
+            { "text": "study", "size": 41 }, { "text": "motion", "size": 39 }, { "text": "forces", "size": 10 }
+        ];
+        let ans = datasetController.getWordCloudDatasets();
+        expect(JSON.stringify(ans)).to.equal(JSON.stringify(obj));
+    });
 });
